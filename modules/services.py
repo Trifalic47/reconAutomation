@@ -1,6 +1,8 @@
 import subprocess
 from colorama import Fore, Style, init
 import os
+from modules.parser import parser
+import json
 
 init(autoreset=True)
 
@@ -12,8 +14,11 @@ class Scan:
         self._final = final
         self._directoryName = host.replace(".", "_")
         # subprocess.run(["mkdir", "-p", directoryName])
-        if not os.path.exists(self._directoryName):
-            os.makedirs(f"output/{self._directoryName}")
+        try:
+            if not os.path.exists(self._directoryName):
+                os.makedirs(f"output/{self._directoryName}")
+        except FileExistsError:
+            pass
         self._xml_output = f"output/{self._directoryName}/{host}.xml"
 
     def baseScan(self, fileName=None):
@@ -57,5 +62,14 @@ class Scan:
                     text=True,
                 )
             print(scan.stdout)
+
+            data = parser(self._xml_output)
+            try:
+                with open(
+                    f"output/{self._directoryName}/{self._host}.json", "a"
+                ) as file:
+                    file.write(str(data))
+            except Exception as e:
+                print(e)
         except Exception as e:
             print(e)
