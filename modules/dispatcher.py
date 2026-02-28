@@ -1,4 +1,6 @@
 from colorama import Fore, Style, init
+
+import ftplib
 import subprocess
 
 init(autoreset=True)
@@ -11,6 +13,7 @@ def dispatch_services(
 ):
     for port in parsed_data["ports"]:
         service = port["service"]
+        portNumber = port["port"]
 
         if service == "http" or service == "https":
             if len(isHttp) == 0:
@@ -25,6 +28,15 @@ def dispatch_services(
             else:
                 print("Already done directory enumeration")
                 continue
+        elif service == "ftp":
+            print("ftp detected")
+            server = ftplib.FTP()
+            server.connect(target, portNumber)
+            server.login("anonymous", "anonymous")
+            print(f"{Fore.GREEN}Anonymous login allowed")
+        else:
+            print("No service found running on the server..")
 
-        elif service == "ssh":
-            print("SSH detected")
+
+if __name__ == "__main__":
+    pass
