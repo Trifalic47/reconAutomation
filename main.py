@@ -25,6 +25,14 @@ if __name__ == "__main__":
     )
 
     parser.add_argument(
+        "-w",
+        "--wordlist",
+        type=str,
+        help="Enter the wordlist path",
+        default="wordlists/common.txt",
+    )
+
+    parser.add_argument(
         "-f",
         "--final",
         type=int,
@@ -37,8 +45,9 @@ if __name__ == "__main__":
     output = args.output
     initial = args.initial
     final = args.final
+    wordlist = args.wordlist
 
-    scan = Scan(target, initial, final)
+    scan = Scan(target, wordlist, initial, final)
     if output:
         scan.baseScan(fileName=output)
     else:

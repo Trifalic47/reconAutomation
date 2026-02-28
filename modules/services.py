@@ -1,15 +1,18 @@
-import subprocess
 from colorama import Fore, Style, init
-import os
 from modules.parser import parser
+from modules.dispatcher import dispatch_services
+
+import subprocess
+import os
 import json
 
 init(autoreset=True)
 
 
 class Scan:
-    def __init__(self, host, initial=1, final=1000):
+    def __init__(self, host, wordlist, initial=1, final=1000):
         self._host = host
+        self._wordlist = wordlist
         self._initial = initial
         self._final = final
         self._directoryName = host.replace(".", "_")
@@ -20,6 +23,7 @@ class Scan:
         except FileExistsError:
             pass
         self._xml_output = f"output/{self._directoryName}/{host}.xml"
+        self._gobusterSave = f"output/{self._directoryName}/{host}.gobuster"
 
     def baseScan(self, fileName=None):
         try:
@@ -38,7 +42,6 @@ class Scan:
                         "-O",
                         self._host,
                     ],
-                    capture_output=True,
                     text=True,
                 )
             else:
@@ -58,7 +61,6 @@ class Scan:
                         f"output/{self._directoryName}/{fileName}",
                         self._host,
                     ],
-                    capture_output=True,
                     text=True,
                 )
             print(scan.stdout)
@@ -71,5 +73,8 @@ class Scan:
                     file.write(str(data))
             except Exception as e:
                 print(e)
+            dispatch_services(
+                data, self._host, wordlist=self._wordlist, savepath=self._gobusterSave
+            )
         except Exception as e:
             print(e)

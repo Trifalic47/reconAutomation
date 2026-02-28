@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.98 scan initiated Fri Feb 27 16:13:06 2026 as: nmap -&#45;vv -p 1-1000 -sS -oX output/127_0_0_1/127.0.0.1.xml -sV -O -oN output/127_0_0_1/scan.nmap 127.0.0.1 -->
-<nmaprun scanner="nmap" args="nmap -&#45;vv -p 1-1000 -sS -oX output/127_0_0_1/127.0.0.1.xml -sV -O -oN output/127_0_0_1/scan.nmap 127.0.0.1" start="1772188986" startstr="Fri Feb 27 16:13:06 2026" version="7.98" xmloutputversion="1.05">
+<!-- Nmap 7.98 scan initiated Fri Feb 27 16:39:03 2026 as: nmap -&#45;vv -p 1-1000 -sS -oX output/127_0_0_1/127.0.0.1.xml -sV -O -oN output/127_0_0_1/scan.nmap 127.0.0.1 -->
+<nmaprun scanner="nmap" args="nmap -&#45;vv -p 1-1000 -sS -oX output/127_0_0_1/127.0.0.1.xml -sV -O -oN output/127_0_0_1/scan.nmap 127.0.0.1" start="1772190543" startstr="Fri Feb 27 16:39:03 2026" version="7.98" xmloutputversion="1.05">
 <scaninfo type="syn" protocol="tcp" numservices="1000" services="1-1000"/>
 <verbose level="2"/>
 <debugging level="0"/>
-<taskbegin task="SYN Stealth Scan" time="1772188986"/>
-<taskend task="SYN Stealth Scan" time="1772188986" extrainfo="1000 total ports"/>
-<taskbegin task="Service scan" time="1772188986"/>
-<taskend task="Service scan" time="1772188986" extrainfo="1 service on 1 host"/>
-<taskbegin task="NSE" time="1772188988"/>
-<taskend task="NSE" time="1772188988"/>
-<taskbegin task="NSE" time="1772188988"/>
-<taskend task="NSE" time="1772188988"/>
-<host starttime="1772188986" endtime="1772188988"><status state="up" reason="localhost-response" reason_ttl="0"/>
+<taskbegin task="SYN Stealth Scan" time="1772190543"/>
+<taskend task="SYN Stealth Scan" time="1772190543" extrainfo="1000 total ports"/>
+<taskbegin task="Service scan" time="1772190543"/>
+<taskend task="Service scan" time="1772190543" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1772190545"/>
+<taskend task="NSE" time="1772190545"/>
+<taskbegin task="NSE" time="1772190545"/>
+<taskend task="NSE" time="1772190545"/>
+<host starttime="1772190543" endtime="1772190545"><status state="up" reason="localhost-response" reason_ttl="0"/>
 <address addr="127.0.0.1" addrtype="ipv4"/>
 <hostnames>
 <hostname name="localhost" type="PTR"/>
@@ -26,7 +26,7 @@
 </ports>
 <os><portused state="open" proto="tcp" portid="22"/>
 <portused state="closed" proto="tcp" portid="1"/>
-<portused state="closed" proto="udp" portid="35225"/>
+<portused state="closed" proto="udp" portid="37328"/>
 <osmatch name="Linux 2.6.32" accuracy="100" line="59030">
 <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="100"><cpe>cpe:/o:linux:linux_kernel:2.6.32</cpe></osclass>
 </osmatch>
@@ -34,15 +34,15 @@
 <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="100"><cpe>cpe:/o:linux:linux_kernel:5</cpe></osclass>
 <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="6.X" accuracy="100"><cpe>cpe:/o:linux:linux_kernel:6</cpe></osclass>
 </osmatch>
-<osfingerprint fingerprint="OS:SCAN(V=7.98%E=4%D=2/27%OT=22%CT=1%CU=35225%PV=Y%DS=0%DC=L%G=Y%TM=69A1753&#xa;OS:C%P=x86_64-pc-linux-gnu)SEQ(SP=104%GCD=1%ISR=10D%TI=Z%CI=Z%II=I%TS=A)OPS&#xa;OS:(O1=MFFD7ST11NW7%O2=MFFD7ST11NW7%O3=MFFD7NNT11NW7%O4=MFFD7ST11NW7%O5=MFF&#xa;OS:D7ST11NW7%O6=MFFD7ST11)WIN(W1=FFCB%W2=FFCB%W3=FFCB%W4=FFCB%W5=FFCB%W6=FF&#xa;OS:CB)ECN(R=Y%DF=Y%T=40%W=FFD7%O=MFFD7NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A&#xa;OS:=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%&#xa;OS:Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=&#xa;OS:A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=&#xa;OS:Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%&#xa;OS:T=40%CD=S)&#xa;"/>
+<osfingerprint fingerprint="OS:SCAN(V=7.98%E=4%D=2/27%OT=22%CT=1%CU=37328%PV=Y%DS=0%DC=L%G=Y%TM=69A17B5&#xa;OS:1%P=x86_64-pc-linux-gnu)SEQ(SP=107%GCD=1%ISR=10E%TI=Z%CI=Z%II=I%TS=A)OPS&#xa;OS:(O1=MFFD7ST11NW7%O2=MFFD7ST11NW7%O3=MFFD7NNT11NW7%O4=MFFD7ST11NW7%O5=MFF&#xa;OS:D7ST11NW7%O6=MFFD7ST11)WIN(W1=FFCB%W2=FFCB%W3=FFCB%W4=FFCB%W5=FFCB%W6=FF&#xa;OS:CB)ECN(R=Y%DF=Y%T=40%W=FFD7%O=MFFD7NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A&#xa;OS:=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%&#xa;OS:Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=&#xa;OS:A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=&#xa;OS:Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%&#xa;OS:T=40%CD=S)&#xa;"/>
 </os>
-<uptime seconds="977934" lastboot="Mon Feb 16 08:34:14 2026"/>
+<uptime seconds="979491" lastboot="Mon Feb 16 08:34:14 2026"/>
 <distance value="0"/>
-<tcpsequence index="260" difficulty="Good luck!" values="EC0F2371,2EF61A58,889DD0F7,FF30CC8D,E517992B,7EB20D53"/>
+<tcpsequence index="263" difficulty="Good luck!" values="88B08885,F7FCD7E2,3E66BC58,4CD3E61A,BC20AB75,3C4A78D9"/>
 <ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
-<tcptssequence class="1000HZ" values="3A4A1015,3A4A1079,3A4A10DD,3A4A1141,3A4A11A5,3A4A1209"/>
-<times srtt="41" rttvar="12" to="100000"/>
+<tcptssequence class="1000HZ" values="3A61D1E0,3A61D244,3A61D2A8,3A61D30C,3A61D370,3A61D3D4"/>
+<times srtt="31" rttvar="11" to="100000"/>
 </host>
-<runstats><finished time="1772188988" timestr="Fri Feb 27 16:13:08 2026" summary="Nmap done at Fri Feb 27 16:13:08 2026; 1 IP address (1 host up) scanned in 1.70 seconds" elapsed="1.70" exit="success"/><hosts up="1" down="0" total="1"/>
+<runstats><finished time="1772190545" timestr="Fri Feb 27 16:39:05 2026" summary="Nmap done at Fri Feb 27 16:39:05 2026; 1 IP address (1 host up) scanned in 1.64 seconds" elapsed="1.64" exit="success"/><hosts up="1" down="0" total="1"/>
 </runstats>
 </nmaprun>
