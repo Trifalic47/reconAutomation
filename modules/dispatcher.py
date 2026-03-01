@@ -1,5 +1,6 @@
 from colorama import Fore, Style, init
 
+import paramiko
 import ftplib
 import subprocess
 
@@ -34,6 +35,14 @@ def dispatch_services(
             server.connect(target, portNumber)
             server.login("anonymous", "anonymous")
             print(f"{Fore.GREEN}Anonymous login allowed")
+
+        elif service == "ssh":
+            print("SSH detected")
+            ssh = paramiko.SSHClient()
+            ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+            print("Trying default login..")
+            ssh.connect(target, username='admin', password='password')
+
         else:
             print("No service found running on the server..")
 

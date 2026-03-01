@@ -1,4 +1,5 @@
 from modules.services import Scan
+
 import argparse
 
 if __name__ == "__main__":
@@ -20,7 +21,7 @@ if __name__ == "__main__":
         "-i",
         "--initial",
         type=int,
-        help="Enter the inital port scanning range",
+        help="Enter the initial port scanning range",
         default=1,
     )
 
